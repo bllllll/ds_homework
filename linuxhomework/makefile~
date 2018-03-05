@@ -1,0 +1,23 @@
+main:insert_head.o insert_tail.o insert_pos.o delete_head.o delete_tail.o delete_pos.o reverse.o main.o
+	gcc -o main insert_head.o insert_tail.o insert_pos.o delete_head.o delete_tail.o delete_pos.o reverse.o main.o
+main.o:main.c
+	gcc -c main.c
+insert_head.o: insert_head.c
+	gcc -c insert_head.c
+insert_tail.o:insert_tail.c
+	gcc -c insert_tail.c
+insert_pos.o:insert_pos.c
+	gcc -c insert_pos.c
+delete_head.o:insert_pos.c
+	gcc -c insert_pos.c
+delete_tail.o: delete_tail.c
+	gcc -c delete_tail.c
+delete_pos.o:delete_pos.c 
+	gcc -c delete_pos.c 
+reverse.o:reverse.c
+	gcc -c reverse.c
+
+clean:
+	rm *.o main
+
+

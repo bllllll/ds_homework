@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "list.h"
+#include <assert.h>
+#include <stdbool.h>
+
+bool Insert_head(List plist, int val)
+{
+	Node *p = (Node *)malloc(sizeof(Node));
+	p->data = val;
+	p->next = plist->next;
+	plist->next=p;
+
+	return 1;
+}
+
+

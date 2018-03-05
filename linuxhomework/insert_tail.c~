@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "list.h"
+#include <assert.h>
+#include <stdbool.h>
+
+bool Insert_tail(List plist, int val)
+{
+	Node *q=(Node *)malloc(sizeof(Node));
+	Node *p;
+	for(p=plist;p->next != NULL;p=p->next);
+	q->data=val;
+	q->next=p->next;
+	p->next=q;
+
+	return 1;
+}

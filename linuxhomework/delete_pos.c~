@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "list.h"
+#include <assert.h>
+#include <stdbool.h>
+
+static Node * Searchpri(List plist,int key)
+{
+	Node *p;
+	for(p=plist;p->next!= NULL;p=p->next)
+	{
+	   if(p->next->data == key)
+		{
+			return p;
+		}
+	}
+	return NULL;
+}
+
+bool Delete(List plist,int key)
+{
+	Node *p=Searchpri(plist,key);
+	if(p == NULL)
+	{							
+		return 0;
+	}
+	Node *q=p->next;
+	p->next=q->next;
+	free(q);
+	return 1;
+}
+
